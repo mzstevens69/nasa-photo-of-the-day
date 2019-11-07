@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PicCard from './PicCard';
+import styled from "styled-components";
+
+
+const Wrapper = styled.div`
+    max-width: 800px;
+    width:100%;
+    height:60vh;
+`;
 
 const PicList = () => {
     const [nasaPic, setNasaPic] = useState([]);
@@ -19,7 +27,7 @@ const PicList = () => {
     }, []);
 
     return (
-        <div className='pic-wrapper'> 
+        <Wrapper> 
                                       
                 <PicCard 
                 title={nasaPic.title}
@@ -28,7 +36,7 @@ const PicList = () => {
                   
                        
                                    
-        </div>
+        </Wrapper>
     )
 }
 
